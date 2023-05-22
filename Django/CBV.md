@@ -72,8 +72,8 @@
         template_name = 'cbvpolls/index.html'
         context_object_name = 'latest_question_list'
 
-        def get_queryset(self):
-            return Question.objects.order_by('-pub_date')[:5]
+            def get_queryset(self):
+                return Question.objects.order_by('-pub_date')[:5]
 
 
         class DetailView(DetailView):
