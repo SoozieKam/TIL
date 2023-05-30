@@ -103,7 +103,7 @@
         model = Flavor
 
         def get_queryset(self):
-            # 부모 get_queryset으로부터 queryset을 petch 
+            # 부모 get_queryset으로부터 queryset을 fetch 
             queryset = super().get_queryset()
             
             # GET 파라미터를 받는다.
