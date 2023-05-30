@@ -64,7 +64,7 @@
 
     2) 메서드 오버라이딩
         - `def get_queryset()`
-        - `def get_context_data(**kwargs): 뷰에서 템플릿 파일에 넘겨주는 context 데이터 추가 및 변경을 위해 오버라이딩 
+        - `def get_context_data(**kwargs)`: 뷰에서 템플릿 파일에 넘겨주는 context 데이터 추가 및 변경을 위해 오버라이딩 
         -  `def form_valid(form)`
 
 
