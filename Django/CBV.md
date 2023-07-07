@@ -12,14 +12,14 @@
     <img src="https://miro.medium.com/v2/resize:fit:828/format:webp/1*1NgVsYmmLCiwXUy-uE0VLA.jpeg">
 
     - FBV
-    장점: 구현이 간단함, 읽기 편함, 직관적인 코드, 데코레이터 사용이 간단함
+    <br>장점: 구현이 간단함, 읽기 편함, 직관적인 코드, 데코레이터 사용이 간단함
     
-    단점: 코드를 확장하거나 재사용하기 어려움, 조건문으로 HTTP 메소드 구분
+    <br>단점: 코드를 확장하거나 재사용하기 어려움, 조건문으로 HTTP 메소드 구분
 
     - CBV
-    장점: 내장된 뷰를 사용해서 코드를 확장하거나 재사용하기 쉬움, mixin(다중 상속) 같은 객체지향 기술을 사용할 수 있음, 분리된 메소드로 HTTP 메소드 구분 가능
+    <br>장점: 내장된 뷰를 사용해서 코드를 확장하거나 재사용하기 쉬움, mixin(다중 상속) 같은 객체지향 기술을 사용할 수 있음, 분리된 메소드로 HTTP 메소드 구분 가능
 
-    단점: 읽기 힘듦, 직관적이지 않은 코드 (부모 클래스/mixin에 숨어있는 코드들이 많기 떄문) 뷰 데코레이터를 사용하려면 따로 import를 하거나 메소드를 오버라이드 해야 함
+    <br>단점: 읽기 힘듦, 직관적이지 않은 코드 (부모 클래스/mixin에 숨어있는 코드들이 많기 떄문) 뷰 데코레이터를 사용하려면 따로 import를 하거나 메소드를 오버라이드 해야 함
 
 
 3. 제너릭 뷰
@@ -35,7 +35,7 @@
         - DetailView: 조건에 맞는 하나의 객체 출력 
         - ListView: 조건에 맞는 객체 목록 출력 
 
-    3) Generic Edit View: 폼을 통해 C, U, D 기능을 제공하는 뷰 
+    3) Generic Edit View: 폼을 통해 C, R, U, D 기능을 제공하는 뷰 
         - FormView: 폼이 주어지면 해당 폼을 출력 
         - CreateView: 객체 생성 폼 출력
         - UpdateView: 기존 객체 수정하는 폼 출력 
@@ -64,7 +64,7 @@
 
     2) 메서드 오버라이딩
         - `def get_queryset()`
-        - `def get_context_data(**kwargs): 뷰에서 템플릿 파일에 넘겨주는 context 데이터 추가 및 변경을 위해 오버라이딩 
+        - `def get_context_data(**kwargs)`: 뷰에서 템플릿 파일에 넘겨주는 context 데이터 추가 및 변경을 위해 오버라이딩 
         -  `def form_valid(form)`
 
 
@@ -103,7 +103,7 @@
         model = Flavor
 
         def get_queryset(self):
-            # 부모 get_queryset으로부터 queryset을 petch 
+            # 부모 get_queryset으로부터 queryset을 fetch 
             queryset = super().get_queryset()
             
             # GET 파라미터를 받는다.
