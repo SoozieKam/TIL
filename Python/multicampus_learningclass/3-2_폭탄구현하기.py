@@ -31,3 +31,9 @@ for _ in range(K):
         sum += 4
 
 print(sum)
+
+# 더 좋은 답
+# 이렇게 하면 괄호 안의 조건식이 True일 경우 1을 빼는 것!!
+for _ in range(K):
+    y, x = map(int, input().split())
+    sum += 5 - (y == 1) - (y == N) - (x == 1) - (x == N)

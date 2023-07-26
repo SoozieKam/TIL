@@ -25,36 +25,6 @@
 answer = list(map(int, input()))
 user_input = list(map(int, input()))
 
-# strike, ball, fail을 판단하는 로직
-
-# 0. 우선 과정을 수행한 횟수를 나타내는 변수를 만든다.
-make_input_count = 0
-
-# 1. 정답과 사용자 인풋값을 비교해서 0 = strike, 1 = ball, 2 = fail 로 정한다.
-# 2. result의 모든 상태는 기본적으로 fail로 둔다.
-while True:
-    make_input_count += 1
-    result = [2, 2, 2, 2]
-
-    # user_input과 answer이 같은 경우 게임이 종료된다.
-    if user_input == answer:
-        print(make_input_count)
-        break
-
-    # 3. 입력의 첫째 자리부터 순서대로 보면서 현재 값이 정답에 포함되는지 판단한다. 포함된다면 3으로 넘어가고, 아니라면 다음 자리로 넘어간다.
-    for i in range(4):
-        # 현재 값이 answer에 없는 경우 fail, 근데 기본값을 fail로 설정했으니 그냥 넘어가면 된다.
-
-        # 4. 현재 값과 입력값이 자리까지 동일하다면 strike, 아니면 ball로 상태를 확정한다.
-        # 아래는 strike인 경우
-        if user_input[i] in answer:
-            if user_input[i] == answer[i]:
-                result[i] = 0
-
-            # ball인 경우
-            else:
-                result[i] = 1
-
 # fail인 경우 처리하는 로직
 # 반복적으로 일어나는 과정이므로, 따로 함수를 만들면 가독성이 높아진다!
 
@@ -107,5 +77,38 @@ def ball():
             user_input[pos[i]] = value[i - 1]
 
 
+# strike, ball, fail을 판단하는 로직
+
+# 0. 우선 과정을 수행한 횟수를 나타내는 변수를 만든다.
+make_input_count = 0
+
+# 1. 정답과 사용자 인풋값을 비교해서 0 = strike, 1 = ball, 2 = fail 로 정한다.
+# 2. result의 모든 상태는 기본적으로 fail로 둔다.
+while True:
+    make_input_count += 1
+    result = [2, 2, 2, 2]
+
+    # user_input과 answer이 같은 경우 게임이 종료된다.
+    if user_input == answer:
+        print(make_input_count)
+        break
+
+    # 3. 입력의 첫째 자리부터 순서대로 보면서 현재 값이 정답에 포함되는지 판단한다. 포함된다면 3으로 넘어가고, 아니라면 다음 자리로 넘어간다.
+    for i in range(4):
+        # 현재 값이 answer에 없는 경우 fail, 근데 기본값을 fail로 설정했으니 그냥 넘어가면 된다.
+
+        # 4. 현재 값과 입력값이 자리까지 동일하다면 strike, 아니면 ball로 상태를 확정한다.
+        # 아래는 strike인 경우
+        if user_input[i] in answer:
+            if user_input[i] == answer[i]:
+                result[i] = 0
+
+            # ball인 경우
+            else:
+                result[i] = 1
+
+
 fail()
 ball()
+
+print(make_input_count)
